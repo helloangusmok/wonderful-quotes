@@ -1,0 +1,14 @@
+.progress-bizzo {
+  display: block;
+  width: 100%;
+  height: 40px;
+  background-color: #eee;
+  margin: auto;
+  transition: width 500ms;
+}
+
+.add-quote {
+  display: block;
+  margin: 0 auto;
+  width: 70%;
+}
