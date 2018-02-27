@@ -7,12 +7,37 @@
 </template>
 
 <script>
+  import { eventBus } from '../main'
+
   export default {
     data: function(){
       return {
-        barWidth: 0,
-        quoteCounter: 0
+        quotes: []
       };
+    },
+    computed: {
+      quoteCounter: function() {
+        if(this.quotes){
+          return this.quotes.length;
+        } else {
+          return 0;
+        }
+      },
+      barWidth: function(){
+        return this.quoteCounter * 10;
+      }
+    },
+    created(){
+      eventBus.$on('quoteListEdited', (quoteList) => {
+        this.quotes = quoteList;
+        console.log(this.quotes);
+      });
     }
   }
 </script>
+
+<style scoped>
+  .progress-bar {
+    transition: width .7s;
+  }
+</style>

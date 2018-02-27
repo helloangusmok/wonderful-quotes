@@ -1,8 +1,7 @@
 <template>
   <div class="add-quote">
     <h3>Quote</h3>
-    <textarea name="name" rows="8" cols="110" v-model="currentQuote" @keyup.enter="submitQuote"></textarea>
-    <p>{{ currentQuote }}</p>
+    <textarea name="name" rows="8" cols="97" v-model="currentQuote" @keyup.enter="submitQuote"></textarea>
   </div>
 </template>
 
@@ -22,7 +21,7 @@
         eventBus.$emit('quoteListEdited', this.quoteList);
         this.currentQuote = "";
       }
-    }
+    },
   }
 </script>
 
